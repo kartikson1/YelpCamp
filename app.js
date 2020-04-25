@@ -23,7 +23,7 @@ mongoose.set('useFindAndModify', false);
 //mongoose.set('useCreateIndex', true)
 
 //mongoose.connect("mongodb://localhost::27017/yelp_camp")
-mongoose.connect("mongodb+srv://kartikson1:22sepkms@cluster0-qelrs.mongodb.net/test?retryWrites=true&w=majority", 
+mongoose.connect("mongodb+srv://kartikson1:22sepkms@cluster0-cgv4t.mongodb.net/test?retryWrites=true&w=majority", 
 {useNewUrlParser: true,
  useCreateIndex: true}).then(() => {
    console.log("connected to DB!");
