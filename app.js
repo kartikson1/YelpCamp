@@ -18,18 +18,20 @@ var commentRoutes    = require("./routes/comments"),
 
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
+mongoose.set('useNewUrlParser', true)
+mongoose.set('useCreateIndex', true)
 
-//mongoose.set('useNewUrlParser', true)
-//mongoose.set('useCreateIndex', true)
+//mongoose.connect("mongodb://localhost:27017/yelp_camp")
 
-//mongoose.connect("mongodb://localhost::27017/yelp_camp")
-mongoose.connect("mongodb+srv://kartikson1:22sepkms@cluster0-cgv4t.mongodb.net/test?retryWrites=true&w=majority", 
-{useNewUrlParser: true,
- useCreateIndex: true}).then(() => {
-   console.log("connected to DB!");
- }).catch(err => {
-   console.log("ERROR: ", err.message);
- });
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+
+// mongoose.connect("mongodb+srv://kartikson1:22sepkms@cluster0-cgv4t.mongodb.net/test?retryWrites=true&w=majority", 
+// {useNewUrlParser: true,
+//  useCreateIndex: true}).then(() => {
+//    console.log("connected to DB!");
+//  }).catch(err => {
+//    console.log("ERROR: ", err.message);
+//  });
 
 
 app.use(bodyParser.urlencoded({extended: true}));
