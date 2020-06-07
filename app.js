@@ -22,8 +22,8 @@ mongoose.set('useNewUrlParser', true)
 mongoose.set('useCreateIndex', true)
 
 //mongoose.connect("mongodb://localhost:27017/yelp_camp")
-
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp"
+mongoose.connect(url, {useNewUrlParser: true});
 
 // mongoose.connect("mongodb+srv://kartikson1:22sepkms@cluster0-cgv4t.mongodb.net/test?retryWrites=true&w=majority", 
 // {useNewUrlParser: true,
